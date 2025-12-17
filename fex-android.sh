@@ -30,6 +30,9 @@ function termux_install
     wget https://github.com/AllPlatform/Fex-Android/releases/download/v1.3-update/ubuntu.tar.xz -O ubuntu.tar.xz
     echo -e "\e[32m[+] Extracting Ubuntu 22.04.3 LTS RootFS...\e[0m"
     tar -xf ubuntu.tar.xz
+    wget https://github.com/pz64/Fex-Android/releases/download/v1.3-update/extra.tar.xz -O extra.tar.xz
+    echo -e "\e[32m[+] Extracting Extras...\e[0m"
+    tar --keep-old-files -xf extra.tar.xz
     mkdir -p patch
     echo -e "\e[32m[+] Downloading update patch...\e[0m"
     wget https://github.com/AllPlatform/Fex-Android/raw/main/patch/fex-emu-armv8.4_2403.1~j_arm64.deb -O patch/update.deb
@@ -42,7 +45,7 @@ function termux_install
     echo -e "\e[32m[+] installation is complete\e[0m"
     echo -e "Type \e[31mfex\e[0m command to run"
     rm ubuntu.tar.xz
-
+    rm extra.tar.xz
 }
 
 function fexinstall()
