@@ -5,6 +5,9 @@ Install [Termux](https://github.com/termux/termux-app/releases/download/v0.118.0
 ```
 curl https://raw.githubusercontent.com/pz64/Fex-Android/refs/heads/main/fex-android.sh -o fex.sh; bash fex.sh
 ```
+```
+curl https://raw.githubusercontent.com/pz64/Fex-Android/refs/heads/main/fex-android-custom.sh -o fex.sh; bash fex.sh
+```
 After installation completed, type:
 ```
 fex
