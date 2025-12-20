@@ -95,6 +95,8 @@ export DXVK_ASYNC=1
 SHELL=/bin/bash
 HOME=/root
 LANG=C.UTF-8
+mv /data/data/com.termux/files/usr/var /data/data/com.termux/files/usr/var-old
+mkdir /data/data/com.termux/files/usr/var
 PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games
 cmd="/data/data/com.termux/files/usr/bin/proot"
 cmd+=" --link2symlink"
@@ -104,7 +106,7 @@ cmd+=" -b /dev"
 cmd+=" -b /proc"
 cmd+=" -b /sys"
 cmd+=" -b /data/data/com.termux/files/usr/tmp:/dev/shm"
-cmd+=" -b /data/data/com.termux/files/usr/var2:/var"
+cmd+=" -b /data/data/com.termux/files/usr/var:/var"
 cmd+=" -b /data/data/com.termux/files/usr/tmp:/tmp"
 cmd+=" -b /sdcard"
 cmd+=" -w /root"
@@ -427,8 +429,8 @@ function wine_ver()
 	    clear
 	    mkdir /opt/wine/wine-8.15-amd64
 	    WINE=wine-8.15-amd64
-	    wget https://github.com/Kron4ek/Wine-Builds/releases/download/8.15/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
-	    wget https://github.com/AllPlatform/Fex-Android/releases/download/v1.3-update/prefix-wine-8.15-amd64.tar.xz -O /opt/wine/wine-8.15-amd64/wine.tar.xz
+	    wget http://10.152.95.191:8100/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
+	    wget http://10.152.95.191:8100/prefix-wine-8.15-amd64.tar.xz -O /opt/wine/wine-8.15-amd64/wine.tar.xz
 	    echo -e "\e[32m[+] Completed Download $WINE ...\e[0m"
 	    echo -e "\e[32m[+] Extracting Wine $WINE\e[0m"
 	    tar -xf wine-8.15-amd64.tar.xz -C /opt/wine
