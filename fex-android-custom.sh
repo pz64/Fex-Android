@@ -95,7 +95,7 @@ export DXVK_ASYNC=1
 SHELL=/bin/bash
 HOME=/root
 LANG=C.UTF-8
-chmod -R 0755 /data/data/com.termux/files/home/Fex-Android/
+# chmod -R 0755 /data/data/com.termux/files/home/Fex-Android/
 PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games
 cmd="/data/data/com.termux/files/usr/bin/proot"
 cmd+=" --link2symlink"
@@ -104,7 +104,8 @@ cmd+=" -r ."
 cmd+=" -b /dev"
 cmd+=" -b /proc"
 cmd+=" -b /sys"
-cmd+=" -b /root:/dev/shm"
+cmd+=" -b /data/data/com.termux/files/usr/tmp:/var"
+cmd+=" -b /data/data/com.termux/files/usr/tmp:/dev/shm"
 cmd+=" -b /data/data/com.termux/files/usr/tmp:/tmp"
 cmd+=" -b /sdcard"
 cmd+=" -w /root"
