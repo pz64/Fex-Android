@@ -27,7 +27,7 @@ function termux_install
     echo "exit-idle-time = -1" >> ~/../usr/etc/pulse/daemon.conf
     echo "autospawn = no" >> ~/../usr/etc/pulse/client.conf
     clear
-    wget http://10.152.95.191:8100/ubuntu2.tar.xz -O ubuntu.tar.xz
+    wget http://10.152.95.191:8100/rootfs.tar.xz -O ubuntu.tar.xz
     echo -e "\e[32m[+] Extracting Ubuntu 22.04.3 LTS RootFS...\e[0m"
     tar -xf ubuntu.tar.xz
     mkdir -p patch
@@ -42,7 +42,6 @@ function termux_install
     echo -e "\e[32m[+] installation is complete\e[0m"
     echo -e "Type \e[31mfex\e[0m command to run"
     rm ubuntu.tar.xz
-    rm extra.tar.xz
 }
 
 function fexinstall()
