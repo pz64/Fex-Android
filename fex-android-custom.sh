@@ -546,7 +546,6 @@ function run_terminal()
     echo -e "\e[32m[+] run Terminal mode in Proot\e[0m"
     echo -e "\e[32m[+] type command  exit to automatic kill session\e[0m"
     echo "cmdstart='/bin/bash --login'" > start.sh
-    termux-x11 :0 > /dev/null 2>&1 &
     ./start-proot.sh
     _kill
 }
