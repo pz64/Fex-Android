@@ -27,9 +27,9 @@ function termux_install
     echo "exit-idle-time = -1" >> ~/../usr/etc/pulse/daemon.conf
     echo "autospawn = no" >> ~/../usr/etc/pulse/client.conf
     clear
-    wget http://10.152.95.191:8100/rootfs.tar.xz -O ubuntu.tar.xz
+    wget http://10.152.95.191:8100/rootfs.tar.xz -O ubuntu.tar
     echo -e "\e[32m[+] Extracting Ubuntu 22.04.3 LTS RootFS...\e[0m"
-    tar -xf ubuntu.tar.xz
+    tar -xf ubuntu.tar
     mkdir -p patch
     echo -e "\e[32m[+] Downloading update patch...\e[0m"
     wget https://github.com/AllPlatform/Fex-Android/raw/main/patch/fex-emu-armv8.4_2403.1~j_arm64.deb -O patch/update.deb
@@ -41,7 +41,7 @@ function termux_install
     cd ../
     echo -e "\e[32m[+] installation is complete\e[0m"
     echo -e "Type \e[31mfex\e[0m command to run"
-    rm ubuntu.tar.xz
+    rm ubuntu.tar
 }
 
 function fexinstall()
@@ -546,6 +546,7 @@ function run_terminal()
     echo -e "\e[32m[+] run Terminal mode in Proot\e[0m"
     echo -e "\e[32m[+] type command  exit to automatic kill session\e[0m"
     echo "cmdstart='/bin/bash --login'" > start.sh
+    termux-x11 :0 > /dev/null 2>&1 &
     ./start-proot.sh
     _kill
 }
