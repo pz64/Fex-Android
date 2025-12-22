@@ -8,9 +8,7 @@ curl https://raw.githubusercontent.com/pz64/Fex-Android/refs/heads/main/fex-andr
 ```
 curl https://raw.githubusercontent.com/pz64/Fex-Android/refs/heads/main/fex-android-custom.sh -o fex.sh; bash fex.sh
 ```
-```
-curl https://raw.githubusercontent.com/pz64/Fex-Android/refs/heads/main/fex-android-custom-noroot.sh -o fex.sh; bash fex.sh
-```
+
 After installation completed, type:
 ```
 fex

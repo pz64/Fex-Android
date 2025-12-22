@@ -27,7 +27,7 @@ function termux_install
     echo "exit-idle-time = -1" >> ~/../usr/etc/pulse/daemon.conf
     echo "autospawn = no" >> ~/../usr/etc/pulse/client.conf
     clear
-    wget http://10.152.95.191:8100/rootfs.tar.xz -O ubuntu.tar
+    wget http://10.152.95.191:8100/rootfs.tar -O ubuntu.tar
     echo -e "\e[32m[+] Extracting Ubuntu 22.04.3 LTS RootFS...\e[0m"
     tar -xf ubuntu.tar
     mkdir -p patch
