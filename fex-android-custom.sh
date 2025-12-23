@@ -27,7 +27,7 @@ function termux_install
     echo "exit-idle-time = -1" >> ~/../usr/etc/pulse/daemon.conf
     echo "autospawn = no" >> ~/../usr/etc/pulse/client.conf
     clear
-    wget http://10.152.95.191:8100/rootfs.tar -O ubuntu.tar
+    wget http://10.31.41.191:8100/rootfs.tar -O ubuntu.tar
     echo -e "\e[32m[+] Extracting Ubuntu 22.04.3 LTS RootFS...\e[0m"
     tar -xf ubuntu.tar
     mkdir -p patch
@@ -426,8 +426,8 @@ function wine_ver()
 	    clear
 	    mkdir /opt/wine/wine-8.15-amd64
 	    WINE=wine-8.15-amd64
-	    wget http://10.152.95.191:8100/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
-	    wget http://10.152.95.191:8100/prefix-wine-8.15-amd64.tar.xz -O /opt/wine/wine-8.15-amd64/wine.tar.xz
+	    wget http://10.31.41.191:8100/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
+	    wget http://10.31.41.191:8100/prefix-wine-8.15-amd64.tar.xz -O /opt/wine/wine-8.15-amd64/wine.tar.xz
 	    echo -e "\e[32m[+] Completed Download $WINE ...\e[0m"
 	    echo -e "\e[32m[+] Extracting Wine $WINE\e[0m"
 	    tar -xf wine-8.15-amd64.tar.xz -C /opt/wine
